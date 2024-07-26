@@ -9,7 +9,6 @@ img = cv2.imread('test.png')
 
 # Grayscale image
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # Display grayscale image
 plt.imshow(cv2.cvtColor(gray, cv2.COLOR_BGR2RGB))
@@ -36,7 +35,7 @@ count = 0
 
 # Initialize the Haar cascade classifier
 plate_cascade = cv2.CascadeClassifier(harcascade)
-plates = plate_cascade.detectMultiScale(img_gray, 1.1, 4)
+plates = plate_cascade.detectMultiScale(gray, 1.1, 4)
 
 # Initialize easyocr reader
 reader = easyocr.Reader(['en'])
